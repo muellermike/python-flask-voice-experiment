@@ -15,34 +15,24 @@ class User(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, id: str=None, unique_id: int=None, gender: Recording=None, age: Recording=None):  # noqa: E501
+    def __init__(self, id: str=None, unique_id: int=None):  # noqa: E501
         """User - a model defined in Swagger
 
         :param id: The id of this User.  # noqa: E501
         :type id: str
-        :param gender: The gender of this User.  # noqa: E501
-        :type gender: string
-        :param age: The age of this User.  # noqa: E501
-        :type age: string
         """
         self.swagger_types = {
             'id': str,
-            'unique_id': int,
-            'gender': Recording,
-            'age': Recording
+            'unique_id': int
         }
 
         self.attribute_map = {
             'id': 'id',
-            'unique_id': 'uniqueId',
-            'gender': 'gender',
-            'age': 'age'
+            'unique_id': 'uniqueId'
         }
 
         self._id = id
         self._unique_id = unique_id
-        self._gender = gender
-        self._age = age
 
     @classmethod
     def from_dict(cls, dikt) -> 'User':
@@ -98,45 +88,3 @@ class User(Model):
         """
 
         self._unique_id = unique_id
-
-    @property
-    def gender(self) -> Recording:
-        """Gets the gender of this User.
-
-
-        :return: The gender of this User.
-        :rtype: string
-        """
-        return self._gender
-
-    @gender.setter
-    def gender(self, gender: Recording):
-        """Sets the gender of this User.
-
-
-        :param gender: The gender of this User.
-        :type gender: string
-        """
-
-        self._gender = gender
-
-    @property
-    def age(self) -> Recording:
-        """Gets the age of this User.
-
-
-        :return: The age of this User.
-        :rtype: string
-        """
-        return self._age
-
-    @age.setter
-    def age(self, age: Recording):
-        """Sets the age of this User.
-
-
-        :param age: The age of this User.
-        :type age: object
-        """
-
-        self._age = age
